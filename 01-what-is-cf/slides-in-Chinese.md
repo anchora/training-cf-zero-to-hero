@@ -1,120 +1,119 @@
-## Cloud Foundry <br />From Zero To Hero
-### [01 What is Cloud Foundry?](#/0)
+## Cloud Foundry <br />从入门到精通
+### [01 什么是Cloud Foundry?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权由CloudCredo所有。 &copy; CloudCredo 2015.保留一切权利。
 </p>
 
 ---
 
-## [Why are we here?](#/1)
+## [我们为何相聚于此?](#/1)
 
-  1. To discover Cloud Foundry
-  1. To learn by doing, as a team
-  1. To become [Cloud Foundry Heroes](#/1)
+  1. 去发掘Cloud Foundry
+  1. 团队协作，亲身实践
+  1. 成为[玩转Cloud Foundry的高手](#/1)
 
 ---
 
-## [You will learn:](#/2)
+## [你将会学到:](#/2)
 
-  1. What is Cloud Foundry?
-  1. How do I interact with CF?
-  1. How do I push my app into CF?
-  1. What are app buildpacks?
+  1. 什么是Cloud Foundry?
+  1. 如何与CF交互?
+  1. 怎样将应用部署到CF上?
+  1. 什么是buildpacks?
   ---
 
-  LUNCH BREAK
+  午餐&午休
 
   ---
-  1. How does CF make my app resilient?
-  1. How do I debug my CF app?
-  1. How is shared state handled in CF apps?
-  1. How do I use custom domains &amp; routes?
+  1. CF如何使我的应用快速恢复?
+  1. 如何调试CF应用?
+  1. CF应用间的共享状态是如何管理的?
+  1. 如何使用自定义域名?
 
 ---
 
-## [If you really want to learn,](#/3) <br /> ask questions
+## [好学者有疑](#/3) <br /> 但问无妨
 
-> Questions cannot be stupid. Answers can.
-
----
-
-## [We will deliver](#/4) a feature [<br />with](#/4) every topic
+> 问题必须正经严肃，但回答可以幽默诙谐。
 
 ---
 
-## [Why is the content being](#/5) delivered by a team [of people?](#/5)
+## [我们的每个](#/4)主题 [<br />都有各自的](#/4)特色
 
 ---
 
-## [Content on](#/6) USB flash drive
-
-  * Slides for you to follow along
-  * Example apps
-  * Content from other training tracks
+## [为什么本文要由](#/5) 一整个团队的人 [来讲授呢？](#/5)
 
 ---
 
-## [Online](#/7) slides
+## U盘里的[文件](#/6)
+
+  * 本次课程的幻灯片
+  * 示例应用
+  * 其他课程的资料
+
+---
+
+## [在线](#/7)幻灯片
 
 http://slides.cf-hero.cloudcredo.io
 
 ---
 
-## [If you need an](#/8) extra challenge
+## [想要](#/8)挑战自我吗？
 
-### [Become a](#/8) CF Superhero
-
----
-
-## [What is](#/9) Cloud Foundry[?](#/9)
-
-  * An open _Platform as a Service_ (_PaaS_)
-  * Fast and easy to build, test, deploy &amp; scale apps
-  * Works with any* language or framework
-
-> Find out more at [docs.cloudfoundry.org](https://docs.cloudfoundry.org/concepts/overview.html)
-
-Note:
-  Open-source with an Apache license, hosted on GitHub.
-
-  Developers use the cf command line utility to interact with a CF deployment.
-  The cf cli is pre-built for Windows, Mac and Linux.
-
-  CF supports any language or framework through buildpacks. More on that subject later.
+### [那就试着成为一名](#/8) CF 大牛吧！
 
 ---
 
-## [What is](#/10) Platform as a Service[?](#/10)
+## [什么是](#/9) Cloud Foundry[?](#/9)
 
-  * <span style="color: #8FF541;">Cloud Computing</span> characterised as **IaaS**, **PaaS**, and **SaaS**
-  * Applications are the **PaaS** unit of currency
-  * Heroku blazed a trail for **PaaS**
+  * 一个开放的 _Platform as a Service_ (_PaaS_)
+  * 能够快速便捷地构建、测试、部署、伸缩应用
+  * 支持众多*语言及框架
 
-Note:
-  IaaS - servers, SaaS - users.
+> 了解更多 [docs.cloudfoundry.org](https://docs.cloudfoundry.org/concepts/overview.html)
 
+注:
+  托管于GitHub，使用Apache开源许可。
+
+  开发者使用cf命令行工具与CF实例交互。cf命令行工具提供Windows，Mac及Linux的预构建版本。
+
+  CF通过buildpacks来支持各种语言及框架。后续课程会作详细介绍。
+
+---
+
+## [什么是](#/10) Platform as a Service[?](#/10)
+
+  * <span style="color: #8FF541;">云计算平台</span>按其特征可划分为  **IaaS**，**PaaS**，以及 **SaaS**
+  * 应用类似于 **PaaS** 的货币单位
+  * Heroku开辟了**PaaS**的先河
+
+注:
+  IaaS - 服务器， SaaS - 用户。
+
+  Heroku基于其风靡一时的所谓“12要素”经验创造了这种模式，“buildpack”也深受影响。
   Heroku created patterns based on their experiences called "12 Factors" that have been heavily influencial. Also drove "buildpack" model
 
 ---
 
-## [Why](#/11) Platform as a Service[?](#/11)
+## [为什么要用](#/11) Platform as a Service[?](#/11)
 
-  * Deliver business value quickly
-  * Focus on what matters for your business
-  * Cheap &amp; fast to fail, promote learning
+  * 快速传递商业价值
+  * 只需专注于业务
+  * 快速试错、成本低廉，促进学习
 
-Note:
-  Find what your customers actually want by showing them.
-  Iterate constantly by learning what is actually important.
-
-  Do not wait for IT to provision servers.
-
-  Let developers choose the language and services that they believe are best for the job.
+注:
+  直接将用户所需呈现其眼前，通过直击痛点不断提高。
+  
+  不用等待IT部门筹备服务器。
+  
+  允许开发者选择他认为最适合这样工作的语言及服务。
 
 ---
 
-## [Cloud Foundry](#/12) Foundation
+## [Cloud Foundry](#/12) 基金会
 
   * EMC
   * HP
@@ -124,56 +123,54 @@ Note:
   * SAP
   * Swisscom
   * VMware
-  * ... 45 orgs and growing!
+  * ... 45个公司和组织，并不断壮大中！
 
 
 ---
 
-## [How many](#/13) types of CF[?](#/13)
+## CF[有哪些](#/13)不同的类别[?](#/13)
 
-  1. Open Source Software
-  1. Vendored Distribution
-  1. Private Service
-  1. Public Service
+  1. 开源软件
+  1. 供应商发行版
+  1. 私有云服务
+  1. 共有云服务
 
 ---
 
-## [1.](#/14) Open Source [Software](#/14)
+## [1.](#/14) 开源 [软件](#/14)
 
   * [github.com/cloudfoundry](https://github.com/cloudfoundry)
-  * **cf-release** requires [BOSH](https://bosh.io/docs) knowledge
-  * **bosh-lite** for a local CF deployment
+  * **cf-release** 需要有 [BOSH](https://bosh.io/docs) 基础
+  * **bosh-lite** 适用于本地CF实例部署
 
-> Great learning opportunity
+> 千载难逢的学习良机
 
-Note:
-  Great learning opportunity through DIY.
-  Takes a long time to master.
-  BOSH has a steep learning curve.
-  CF on bosh-lite requires 10GB of FREE RAM.
-  Companies such as Cloud Credo specialise in custom CF deployments, optimisations & customisations.
-  If you find yourself enjoying this type of work, we want to hear from you.
+注:
+  良机千载难逢，仍须身体力行，冰冻三尺非一日之寒，入木三分非一日之功。
+  BOSH有非常陡峭的学习曲线，上手难度大。
+  通过bosh-lite部署CF要求 10GB 可用内存。
+  Cloud Credo等公司专业提供CF部署、优化及定制服务。
+  如果您对这项工作怀抱兴趣，欢迎联系我们。
 
 ---
 
-## [2.](#/15) Vendored [Distribution](#/15)
+## [2.](#/15) 供应商 [发行版](#/15)
 
   * Pivotal Cloud Foundry
   * HP Helion Development Platform
 
-Note:
-  The Pivotal Cloud Foundry distribution is also known as Pivotal Elastic Runtime.
-  Pivotal has been involved with CF the longest, they have the most experience.
-  Pivotal is contributing the most to the open source CF.
-  Pivotal has built &amp; open-sourced a number of stateful services such as MySQL, Cassandra, Redis, RabbitMQ and others.
-  They all work great in combination with CF.
+注:
+  Pivotal Cloud Foundry分发版即熟知的Pivotal弹性运行时。
+  Pivotal最早介入CF，经验最为丰富。
+  Pivotal对开源CF贡献巨大。
+  Pivotal构建并开源了一系列有状态的服务，诸如MySQL、Cassandra、Redis、RabbitMQ等，这些服务与CF结合使用效果非常好。
 
-  HP Helion Development Platform is a Stackato Cloud Foundry Distribution.
-  HP acquired Stackato in summer for 2015.
+  HP Helion开发平台基于Stackato Cloud Foundry发行版。
+  HP已在2015年夏天收购Stackato。
 
 ---
 
-## [3.](#/16) Private [Service](#/16)
+## [3.](#/16) 私有云 [服务](#/16)
 
   * CloudCredo Platform
   * IBM Bluemix Dedicated
@@ -181,11 +178,10 @@ Note:
   * Canopy Enterprise Private Cloud
   * HP Helion Development Platform
 
-Note:
-  CloudCredo Platform allows you to deploy a CF and a number of other services such as Kubernetes from a simple UI.
-  You only pay the standard infrastructure costs, it's completely free to use.
-
-  IBM Bluemix is CF and a limited number of services on IBM hardware. Banks love this.
+注:
+  CloudCredo Platform允许你通过一个简单的界面部署一个CF实例，以及诸如Kubernates等一系列服务。您只需支付标准的基础设施费用，完全是免费使用。
+  
+  IBM Bluemix包括CF及一些IBM硬件上的服务，很受银行青睐。 
 
   Hosted in CenturyLink DCs Worldwide.
 
