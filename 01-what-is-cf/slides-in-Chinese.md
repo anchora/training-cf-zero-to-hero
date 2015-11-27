@@ -19,14 +19,14 @@
 
   1. 什么是Cloud Foundry?
   1. 如何与CF交互?
-  1. 怎样将应用部署到CF上?
+  1. 怎样将应用部署到CF之上?
   1. 什么是buildpacks?
   ---
 
   午餐&午休
 
   ---
-  1. CF如何使我的应用快速恢复?
+  1. CF如何使我的应用快速恢复运行状态?
   1. 如何调试CF应用?
   1. CF应用间的共享状态是如何管理的?
   1. 如何使用自定义域名?
@@ -39,11 +39,11 @@
 
 ---
 
-## [我们的每个](#/4)主题 [<br />都有各自的](#/4)特色
+## [每个](#/4)主题 [<br />各有](#/4)千秋
 
 ---
 
-## [为什么本文要由](#/5) 一整个团队的人 [来讲授呢？](#/5)
+## [为什么本文需要](#/5) 一整个团队的人 [来讲授？](#/5)
 
 ---
 
@@ -71,31 +71,30 @@ http://slides.cf-hero.cloudcredo.io
 
   * 一个开放的 _Platform as a Service_ (_PaaS_)
   * 能够快速便捷地构建、测试、部署、伸缩应用
-  * 支持众多*语言及框架
+  * 支持众多语言及框架
 
 > 了解更多 [docs.cloudfoundry.org](https://docs.cloudfoundry.org/concepts/overview.html)
 
 注:
-  托管于GitHub，使用Apache开源许可。
+  源码由GitHub托管，使用Apache开源许可。
 
   开发者使用cf命令行工具与CF实例交互。cf命令行工具提供Windows，Mac及Linux的预构建版本。
 
-  CF通过buildpacks来支持各种语言及框架。后续课程会作详细介绍。
+  CF通过buildpacks支持各种语言及框架，后续课程会作详细介绍。
 
 ---
 
 ## [什么是](#/10) Platform as a Service[?](#/10)
 
-  * <span style="color: #8FF541;">云计算平台</span>按其特征可划分为  **IaaS**，**PaaS**，以及 **SaaS**
-  * 应用类似于 **PaaS** 的货币单位
+  * <span style="color: #8FF541;">云计算平台</span>按特征可划分为  **IaaS**，**PaaS**，以及 **SaaS**
+  * 应用是 **PaaS** 的计价单位
   * Heroku开辟了**PaaS**的先河
 
 注:
   IaaS - 服务器， SaaS - 用户。
 
-  Heroku基于其风靡一时的所谓“12要素”经验创造了这种模式，“buildpack”也深受影响。
-  Heroku created patterns based on their experiences called "12 Factors" that have been heavily influencial. Also drove "buildpack" model
-
+  Heroku基于其风靡一时的所谓“12要素”经验开创了多种模式，“buildpack”也深受影响。
+  
 ---
 
 ## [为什么要用](#/11) Platform as a Service[?](#/11)
@@ -105,11 +104,11 @@ http://slides.cf-hero.cloudcredo.io
   * 快速试错、成本低廉，促进学习
 
 注:
-  直接将用户所需呈现其眼前，通过直击痛点不断提高。
+  直接将用户所需呈现其眼前，通过直击痛点不断积累提高。
   
-  不用等待IT部门筹备服务器。
+  无需等待IT部门调配服务器资源。
   
-  允许开发者选择他认为最适合这样工作的语言及服务。
+  允许开发者自由选择他认为最适合这项工作的语言及服务。
 
 ---
 
@@ -131,7 +130,7 @@ http://slides.cf-hero.cloudcredo.io
 ## CF[有哪些](#/13)不同的类别[?](#/13)
 
   1. 开源软件
-  1. 供应商发行版
+  1. 商用发行版
   1. 私有云服务
   1. 共有云服务
 
@@ -140,7 +139,7 @@ http://slides.cf-hero.cloudcredo.io
 ## [1.](#/14) 开源 [软件](#/14)
 
   * [github.com/cloudfoundry](https://github.com/cloudfoundry)
-  * **cf-release** 需要有 [BOSH](https://bosh.io/docs) 基础
+  * **cf-release** 需要有 [BOSH](https://bosh.io/docs) 基础知识
   * **bosh-lite** 适用于本地CF实例部署
 
 > 千载难逢的学习良机
@@ -154,16 +153,16 @@ http://slides.cf-hero.cloudcredo.io
 
 ---
 
-## [2.](#/15) 供应商 [发行版](#/15)
+## [2.](#/15) 商用 [发行版](#/15)
 
   * Pivotal Cloud Foundry
   * HP Helion Development Platform
 
 注:
-  Pivotal Cloud Foundry分发版即熟知的Pivotal弹性运行时。
+  Pivotal Cloud Foundry发行版即熟知的Pivotal弹性运行时。
   Pivotal最早介入CF，经验最为丰富。
   Pivotal对开源CF贡献巨大。
-  Pivotal构建并开源了一系列有状态的服务，诸如MySQL、Cassandra、Redis、RabbitMQ等，这些服务与CF结合使用效果非常好。
+  Pivotal构建并开源了一系列有状态服务，例如MySQL、Cassandra、Redis、RabbitMQ等，这些服务与CF结合使用效果非常好。
 
   HP Helion开发平台基于Stackato Cloud Foundry发行版。
   HP已在2015年夏天收购Stackato。
@@ -179,11 +178,11 @@ http://slides.cf-hero.cloudcredo.io
   * HP Helion Development Platform
 
 注:
-  CloudCredo Platform允许你通过一个简单的界面部署一个CF实例，以及诸如Kubernates等一系列服务。您只需支付标准的基础设施费用，完全是免费使用。
+  CloudCredo Platform允许你通过一个简单的界面部署一个CF实例或诸如Kubernates等一诸多服务，而您仅需支付标准的基础设施费用，相当于是免费使用。
   
-  IBM Bluemix包括CF及一些IBM硬件上的服务，很受银行青睐。 
+  IBM Bluemix包括CF及一些IBM硬件上的服务，倍受银行青睐。 
 
-  托管于世纪互联全球范围内的各个数据中心。
+  运行于世纪互联全球范围内的各个数据中心。
 
   Canopy Cloud，也称作Atos Cloud.
 
@@ -199,11 +198,11 @@ http://slides.cf-hero.cloudcredo.io
   * Pivotal Web Services
 
 注:
-  Anynines总部位于德国萨尔布吕肯，专业提供诸如MongoDB、Redis、ElasticSearch及MySQL等有状态服务的优质计划。
+  Anynines总部位于德国萨尔布吕肯，专业提供MongoDB、Redis、ElasticSearch及MySQL等有状态服务的优质计划。
 
-  瑞士电信开发者门户于2015年十月二日开放，官网宣称其为百分百的瑞士云解决方案。
+  瑞士电信开发者门户于2015年十月二日开放，官网宣称其为百分百纯正的瑞士云解决方案。
   
-  IBM Bluemix运行在Softlayer位于德克萨斯及伦敦的主机之上。IBM Bluemix集成了许多IBM特有的服务，比如Watson、Cloudant、物联网等，并且提供了非常实惠的免费套餐计划。另外，您还可以通过同一个管理界面访问IBM提供的容器及虚拟机。
+  IBM Bluemix运行在Softlayer位于德克萨斯及伦敦的主机之上，集成了许多IBM特有的服务，比如Watson、Cloudant、物联网等，并且提供了非常实惠的免费套餐计划。另外，您还可以通过管理界面访问IBM提供的容器及虚拟机。
   
   Pivotal Web Services历史最为悠久，服务运行于AWS之上。
 
@@ -214,7 +213,7 @@ http://slides.cf-hero.cloudcredo.io
 ```nohighlight
 身为一名CF高手
 我得有一个CF账号
-这样我就不用再顾虑基础设施这类问题了
+这样我便不用再顾虑基础设施这类问题了
 ```
 
 ---
@@ -234,12 +233,12 @@ https://run.pivotal.io
 ```nohighlight
 身为一名CF高手
 我得有一个CF账号
-这样我就不用再顾虑基础设施这类问题了
+这样我便不用再顾虑基础设施这类问题了
 ```
 
 ---
 
-## [有什么](#/22)疑问吗 ?
+## [答](#/22)疑
 
 > 还是那句话，问题必须正经严肃，但解答可以幽默诙谐
 
