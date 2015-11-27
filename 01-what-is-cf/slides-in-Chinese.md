@@ -183,40 +183,38 @@ http://slides.cf-hero.cloudcredo.io
   
   IBM Bluemix包括CF及一些IBM硬件上的服务，很受银行青睐。 
 
-  Hosted in CenturyLink DCs Worldwide.
+  托管于世纪互联全球范围内的各个数据中心。
 
-  Canopy Cloud, a.k.a. The Atos Cloud.
+  Canopy Cloud，也称作Atos Cloud.
 
-  HP Helion Rack is Stackato CF setup on OpenStack running on HP hardware.
+  HP Helion Rack基于Stackato CF，部署在运行于HP硬件上的OpenStack之上。 
 
 ---
 
-## [4.](#/17) Public [Service](#/17)
+## [4.](#/17) 公有云 [服务](#/17)
 
   * Anynines
-  * Swisscom
+  * Swisscom（瑞士电信）
   * IBM Bluemix
   * Pivotal Web Services
 
-Note:
-  Anynines is based in Saarbrücken and provides decent plans for all popular stateful services such as MongoDB, Redis, ElasticSearch &amp; MySQL.
+注:
+  Anynines总部位于德国萨尔布吕肯，专业提供诸如MongoDB、Redis、ElasticSearch及MySQL等有状态服务的优质计划。
 
-  Swisscom Developer Portal, launched on the 2nd of October 2015, it's a 100% Swiss cloud solution according to the official website.
-
-  IBM Bluemix runs on Softlayer in 2 regions: Texas &amp; London.
-  Many IBM-only services such as Watson, Cloudant, Internet of Things are already integrated and come with generous free plans.
-  You also get access to IBM Containers and Virtual Machines from the same dashboard.
-
-  Pivotal Web Services have been around the longest, the service runs on AWS.
+  瑞士电信开发者门户于2015年十月二日开放，官网宣称其为百分百的瑞士云解决方案。
+  
+  IBM Bluemix运行在Softlayer位于德克萨斯及伦敦的主机之上。IBM Bluemix集成了许多IBM特有的服务，比如Watson、Cloudant、物联网等，并且提供了非常实惠的免费套餐计划。另外，您还可以通过同一个管理界面访问IBM提供的容器及虚拟机。
+  
+  Pivotal Web Services历史最为悠久，服务运行于AWS之上。
 
 ---
 
-# [Feature](#/18)
+# [正片](#/18)
 
 ```nohighlight
-As a CF hero
-I want to have a CF account
-So that I don't have to worry about infrastructure ever again
+身为一名CF高手
+我得有一个CF账号
+这样我就不用再顾虑基础设施这类问题了
 ```
 
 ---
@@ -231,34 +229,34 @@ https://run.pivotal.io
 
 ---
 
-# <span style="color: #8FF541;">DELIVERED</span>
+# <span style="color: #8FF541;">布道完成</span>
 
 ```nohighlight
-As a CF hero
-I want to have a CF account
-So that I don't have to worry about infrastructure ever again
+身为一名CF高手
+我得有一个CF账号
+这样我就不用再顾虑基础设施这类问题了
 ```
 
 ---
 
-## [Any](#/22) questions?
+## [有什么](#/22)疑问吗 ?
 
-> Questions cannot be stupid. Answers can.
+> 还是那句话，问题必须正经严肃，但解答可以幽默诙谐
 
 ---
 
-# CF SUPERHERO
+# CF大牛进阶
 
-Compare CF public services:
+CF公有云服务比较:
   * [Anynines](http://www.anynines.com/pricing)
   * [Swisscom](https://developer.swisscom.com/pricing)
   * [IBM Bluemix](https://console.ng.bluemix.net/pricing/)
   * [Pivotal Web Services](https://run.pivotal.io/pricing)
 
-Compare CF architectures:
+CF架构比较:
   * [DEA v2](https://docs.cloudfoundry.org/concepts/architecture/)
   * [Diego v3](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015，保留一切权利。
 </p>
