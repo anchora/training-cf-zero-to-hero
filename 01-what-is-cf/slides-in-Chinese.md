@@ -2,7 +2,7 @@
 ### [01 什么是Cloud Foundry?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  本文版权由CloudCredo所有。 &copy; CloudCredo 2015.保留一切权利。
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015.保留一切权利。
 </p>
 
 ---
@@ -258,5 +258,5 @@ CF架构比较:
   * [Diego v3](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  本文版权归CloudCredo所有。 &copy; CloudCredo 2015，保留一切权利。
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015.保留一切权利。
 </p>
