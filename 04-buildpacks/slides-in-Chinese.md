@@ -1,48 +1,48 @@
-## Cloud Foundry <br />From Zero To Hero
-### [04 What are buildpacks?](#/0)
+## Cloud Foundry <br />从入门到精通
+### [04 什么是 buildpacks?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
 
 ---
 
-# [Feature](#/1)
+# [特色](#/1)
 
 ```nohighlight
-As a CF hero
-I want a simple static website
-So that I can focus on building my product
+身为一名CF高手
+我需要一个简单的静态网站
+这样我便可以专注于构建我的产品了
 ```
 
 ---
 
-## [What are ](#/2) buildpacks[?](#/2)
+## [什么是](#/2) buildpacks[?](#/2)
 
-A Cloud Foundry component that <br />resolves your app's runtime dependencies
-
----
-
-## [Why](#/3) buildpacks[?](#/3)
-
-  * Simplify app deployment - focus on your code
-  * Fewer files, quicker app deploys
-  * Produce self-contained, runnable app artefacts
+Cloud Foundry组件之一， <br />用于解析app的运行时依赖。
 
 ---
 
-## [What does a](#/4) buildpack [do?](#/4)
+## [为什么使用](#/3) buildpacks[?](#/3)
 
-  * Input is the application code
-  * Examines application and fulfils dependencies
-  * Output is a droplet
-  * Metadata output defines ENV vars and start command
-
-> Each buildpack participates in election
+  * 简化应用部署-只需专注于代码
+  * 更少文件，应用部署更快捷
+  * 生成可独立运行的app加工品(droplets)
 
 ---
 
-## [How does a](#/5) buildpack [work?](#/5)
+## buildpack [做了什么?](#/4)
+
+  * 输入为应用代码
+  * 检查应用并满足依赖
+  * 输出是droplet
+  * 元数据输出(Metadata output)定义了环境变量(ENV vars)及启动命令(start command)
+
+> 每个buildpack都会参与甄选
+
+---
+
+## buildpack [如何工作?](#/5)
 
   1. `bin/detect`
   1. `bin/compile`
@@ -50,37 +50,37 @@ A Cloud Foundry component that <br />resolves your app's runtime dependencies
 
 ---
 
-## [Where does the](#/6) buildpack [run?](#/6)
+## buildpack [运行于何处?](#/6)
 
-  * Uses the host kernel with a rootfs (jeos)
-  * Default rootfs is <span style="color: #8FF541;">cflinuxfs2</span> (based on Ubuntu 14.04 Trusty)
-  * Buildpack execution and app runtime are in containers
-  * Cloud Foundry uses [Garden](https://github.com/cloudfoundry-incubator/garden) for containerisation
-
----
-
-## [Cloud Foundry](#/7) <br />deployment flow <br />[revisited](#/7)
-
-  1. Developer pushes application
-  1. Ordered list of buildpacks detect app compatibility
-  1. <span style="color: #8FF541;">Winning</span> buildpack runs compile and release (staging)
-  1. Resulting droplet is store in blobstore
-  1. Droplets are deployed in containers for running apps
+  * 使用带有rootfs的主机内核(jeos)
+  * 默认的rootfs是<span style="color: #8FF541;">cflinuxfs2</span> (基于Ubuntu 14.04 Trusty)
+  * Buildpack执行及app运行时位于容器内
+  * Cloud Foundry使用[Garden](https://github.com/cloudfoundry-incubator/garden)实现容器化
 
 ---
 
-## [How many](#/8) types of buildpacks[?](#/8)
+## [Cloud Foundry](#/7) <br />部署流程 <br />[回顾](#/7)
 
-  1. Default buildpacks
-  1. Community buildpacks
+  1. 开发者push应用
+  1. buildpacks按序检查对应用的兼容性
+  1. <span style="color: #8FF541;">获胜的</span> buildpack执行compile及release (staging)
+  1. 生成的droplet存储于blobstore中
+  1. 应用运行即将droplets部署到容器中
+
+---
+
+## buildpacks[有哪些分类?](#/8)
+
+  1. 默认buildpacks
+  1. 社区buildpacks
   1. Heroku buildpacks
-  1. Custom buildpacks
+  1. 自定义buildpacks
 
-> Online and Offline
+> 在线(Online)与离线(Offline)
 
 ---
 
-## [1.](#/9) Default [buildpacks](#/9)
+## [1.](#/9) 默认 [buildpacks](#/9)
 
 ```bash
 $ cf buildpacks
@@ -99,7 +99,7 @@ binary_buildpack       9          binary_buildpack-cached-v1.0.1
 
 ---
 
-## [2.](#/10) Community [buildpacks](#/10)
+## [2.](#/10) 社区 [buildpacks](#/10)
 
 [github.com/cloudfoundry-community](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks)
 
@@ -107,22 +107,22 @@ binary_buildpack       9          binary_buildpack-cached-v1.0.1
 
 ## [3.](#/11) Heroku [buildpacks](#/11)
 
-  * CF buildpacks are based on them
-  * They are interchangeable* (mostly)
+  * CF buildpacks基于Heroku buildpacks
+  * 它们可以相互替换 (大多数)
 
 ---
 
-## [4.](#/12) Custom [buildpacks](#/12)
+## [4.](#/12) 自定义 [buildpacks](#/12)
 
-  * Your own language deserves its own buildpack
-  * As simple or as complicated as you want
+  * 若您要使用某种特定的编程语言，则需要相应的buildpack
+  * 繁简由您决定
 
 ---
 
-## Static [buildpack](#/13)
+## 静态 [buildpack](#/13)
 
 ```bash
-# From the training home directory:
+# 切换至training主目录:
 $ cd 04-buildpacks/static-app
 $ cf push
 ```
@@ -138,7 +138,7 @@ $ cf app static-app
 
 ---
 
-## Scale app [with ease](#/14)
+## [轻松]扩容app(#/14)
 
 ```bash
 $ cf scale static-app -i 32
@@ -158,27 +158,27 @@ $ cf app static-app
 
 ---
 
-# <span style="color: #8FF541;">DELIVERED</span>
+# <span style="color: #8FF541;">特性已传达</span>
 
 ```nohighlight
-As a CF hero
-I want a simple static website
-So that I can focus on building my product
+身为一名CF高手
+我需要一个简单的静态网站
+这样我便可以专注于构建我的产品了
 ```
 
 ---
 
-## [Any](#/16) questions?
+## [答](#/16) 疑?
 
-> Questions cannot be stupid. Answers can.
+> 提问必须正经严肃，解答可以风趣幽默。
 
 ---
 
-# CF SUPERHERO
+# CF 高手进阶
 
-  * Write [custom buildpack](https://docs.cloudfoundry.org/buildpacks/custom.html) using [caddy HTTP/2 server](https://caddyserver.com/)
-  * Deploy static-app with custom caddy buildpack
+  * 编写一个[caddy HTTP/2 server](https://caddyserver.com/)的[自定义 buildpack](https://docs.cloudfoundry.org/buildpacks/custom.html)
+  * 使用上述自定义的caddy buildpack部署static-app
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
