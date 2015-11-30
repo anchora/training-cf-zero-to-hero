@@ -99,9 +99,9 @@ development   gerhard-cf-hero   cfapps.io                       ...
 注:
   每一个完整的Cloud Foundry环境都至少有一个共享的域名
 
-  所有部署在Cloud Foundry上的应用共享这个域名
+  所有部署在该Cloud Foundry上的应用共享这个域名
 
-  尽管我们自定义的域名没有对应主机，共享域名不能没有主机
+  尽管我们自定义的域名没有对应主机，但是共享域名不能没有主机
 
   共享域名有保留的主机，如api
 
