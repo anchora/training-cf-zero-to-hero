@@ -7,11 +7,11 @@
 
 ---
 
-# [特色](#/1)
+# [特性](#/1)
 
 ```nohighlight
-身为一名CF高手
-我需要一个简单的静态网站
+我希望能像CF英雄那样
+有一个简单的静态网站
 这样我便可以专注于构建我的产品了
 ```
 
@@ -161,8 +161,8 @@ $ cf app static-app
 # <span style="color: #8FF541;">特性已传达</span>
 
 ```nohighlight
-身为一名CF高手
-我需要一个简单的静态网站
+我希望能像CF英雄那样
+有一个简单的静态网站
 这样我便可以专注于构建我的产品了
 ```
 
@@ -174,7 +174,7 @@ $ cf app static-app
 
 ---
 
-# CF 高手进阶
+# CF超级英雄
 
   * 编写一个[caddy HTTP/2 server](https://caddyserver.com/)的[自定义 buildpack](https://docs.cloudfoundry.org/buildpacks/custom.html)
   * 使用上述自定义的caddy buildpack部署static-app
