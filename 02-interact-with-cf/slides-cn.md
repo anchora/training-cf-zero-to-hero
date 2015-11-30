@@ -1,5 +1,5 @@
-## Cloud Foundry <br />From Zero To Hero
-### [02 如何与CF交互?](#/0)
+## Cloud Foundry <br />从无名，到英雄
+### [02 我是如何与CF交互的?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
   本文版权归CloudCredo所有。 &copy; CloudCredo 2015.保留一切权利。
@@ -7,17 +7,17 @@
 
 ---
 
-# [正片](#/1)
+# [特性](#/1)
 
 ```nohighlight
-身为一名CF高手
-我得有命令行工具这把利剑在手
+我希望能像CF高手那样
+安装命令行工具
 这样我便可以把应用部署到我的CF账户下了
 ```
 
 ---
 
-## [如何](#/2)与 CF 进行交互[?](#/2)
+## [我是如何](#/2)与CF进行交互的[?](#/2)
 
 通过带有CF CLI（命令行接口）工具的终端/命令提示符
 
@@ -25,13 +25,13 @@
 注:
   CF CLI与名为Cloud Controller的组件通信，这个组件对外暴露了一组RESTful API。
 
-  好物当如是: 使用CF CLI，从终端操作。
+  正如所有好东西一样: CF CLI也通过从终端使用。
 
-  某些流行的IDE附带有CF插件，您可以通过IDE将应用直接部署到CF之上。
+  一些流行的IDE附带有CF插件，允许您通过IDE将应用直接部署到CF之上。
 
 ---
 
-## [如何](#/3)  安装CF CLI[?](#/3)
+## [我是如何](#/3)安装CF CLI的[?](#/3)
 
 [github.com/cloudfoundry/cli](https://github.com/cloudfoundry/cli#downloads)
 
@@ -46,7 +46,7 @@
   点击GitHub页面第一栏的 Stable Installers.
 ---
 
-## [如何确认](#/4) CF CLI [已正确安装?](#/4)
+## CF CLI [是否已正确安装?](#/4)
 
 ```bash
 $ cf
@@ -73,7 +73,7 @@ BUILD TIME:
 
 ---
 
-## [如何](#/5) 登录 CF[?](#/5)
+## [我是如何](#/5)登录CF的[?](#/5)
 
 ```bash
 $ cf login -a api.run.pivotal.io -u YOUR-EMAIL-ADDRESS
@@ -101,7 +101,7 @@ USAGE:
 
 ---
 
-## [什么是](#/6) CF space[?](#/6)
+## [什么是](#/6)CF space[?](#/6)
 
 每个应用及服务都隶属于一个space。
 
@@ -197,7 +197,7 @@ paid           10G         unlimited      1000     unlimited
 
 ---
 
-## [我当前正](#/10) 定位[在哪个org，哪个space?](#/10)
+## [如何查看我当前正](#/10) 定位[在哪个org，哪个space?](#/10)
 
 ```bash
 $ cf target
@@ -210,33 +210,33 @@ Space:          training
 
 ---
 
-## [如何从当前org或space](#/11) 切换 [至其他的org或space?](#/11)
+## [我是如何从当前org或space](#/11) 切换 [至其他的org或space的?](#/11)
 
 ```bash
 $ cf target -o ORG -s SPACE
 ```
 
 注:
-  如果您想挑战自我，请参阅《使用“多重定位”高手进阶》。
+  如果您想接受额外挑战，参看“CF超级英雄”完成多重定位(multiple targets)。
 ---
 
-# <span style="color: #8FF541;">DELIVERED</span>
+# <span style="color: #8FF541;">特性已传递</span>
 
 ```nohighlight
-身为一名CF高手
-我得有命令行工具这把利剑在手
+我希望能像CF高手那样
+安装命令行工具
 这样我便可以把应用部署到我的CF账户下了
 ```
 
 ---
 
-## [答](#/13) 疑?
+## [答](#/13) 疑
 
 > 提问必须正经严肃，解答可以风趣幽默。
 
 ---
 
-# CF 高手进阶
+# CF超级英雄
 
   * 将坐在您身旁的小伙伴添加到您的PWS space。
   * 在[IBM Bluemix](https://console.ng.bluemix.net/registration/)上新建一个账户。
