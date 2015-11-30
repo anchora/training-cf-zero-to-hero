@@ -1,26 +1,26 @@
-## Cloud Foundry <br />From Zero To Hero
-### [05 How do I make my app resilient?](#/0)
+## Cloud Foundry <br />从入门到精通
+### [05 如何使我的应用恢复运行状态?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
 
 ---
 
-# [Feature](#/1)
+# [特性](#/1)
 
 ```nohighlight
-As a CF hero
-I want my app to be resilient
-So that random failures won't take it offline
+身为一名CF高手
+我希望我的应用能够自动恢复运行状态
+这样意外的错误就不会使其永远离线了
 ```
 
 ---
 
-## [Let's](#/2) ship it
+## [先一起来](#/2) 部署一个应用
 
 ```bash
-# From the training home directory:
+# 切换至training主目录:
 $ cd 05-resilience/imperfect-app
 $ cf push
 
@@ -35,29 +35,29 @@ urls: imperfect-app-votive-seeress.cfapps.io
 
 ---
 
-## You've shipped [your new app!](#/3)
+## 你已经部署好了一个 [新应用!](#/3)
 
-The static website is handling the traffic wonderfully
+该静态网站有极好的流量处理能力，
 
-Everyone wants to use your new app, but...
+大家都想访问下你的应用，然而...
 
 ---
 
-## [It](#/4) crashes
+## [它](#/4) 崩溃了
 
-> _Version 1 Sucks, But Ship It Anyway_
+> _版本 1 很糟糕，但无论如何先部署上去再说_
 
 <img src="images/crash.png" style="background:none; border:none; box-shadow:none;" />
 
 
-Note:
+注:
   [Coding Horror wisdom](http://blog.codinghorror.com/version-1-sucks-but-ship-it-anyway/)
 
 ---
 
-## [How to](#/5) make an app resilient[?](#/5)
+## [如何](#/5) 使应用恢复运行状态[?](#/5)
 
-Embrace failure &amp; run many instances of the same app
+允许出错 &amp; 同一应用运行多个实例
 
 ```bash
 $ cf scale imperfect-app -i 3
@@ -67,20 +67,20 @@ name            state     instances   memory   disk   urls
 imperfect-app   started   2/3         64M      256M   imperfect..
 ```
 
-Note:
-  Because CF is running your app, running many instances of it is just a command away
+注:
+  由于是CF在运行您的应用，因此运行多个实例不过是一条命令的事情。
 
-  Notice the different IPs that your app instances are running on...
+  注意应用不同实例运行IP的区别...
 
-  Even though each DEA runs on a different host, multiple app instances can end up on the same host
+  尽管每个DEA都运行于不同的主机上，多个应用实例仍有可能运行在同一个主机上。
 
-  The more app instances you have, the less likely that they will be running on the same host
+  应用实例越多，其运行于同一主机的几率越小。
 
-  The next generation CF runtime - a.k.a. Diego - does a much better job in regards to evenly distributing the app instances
+  下一代CF运行时-即Diego-对应用实例的均匀分布做了更好的优化。
 
 ---
 
-## [Many crashed instances,](#/6) <br />app still available
+## [即便多个实例崩溃](#/6) <br />应用仍旧可以访问
 
 ```bash
 $ cf app imperfect-app
@@ -92,25 +92,25 @@ $ cf app imperfect-app
 ```
 
 ```bash
-$ watch cf apps # Watch app instances restart in real-time
+$ watch cf apps # 实时查看应用实例重启
 ```
 
 <img src="images/index.png" style="background:none; border:none; box-shadow:none;" />
 
 ---
 
-## [What](#/7) restarts crashed apps[?](#/7)
+## [是谁在]重启崩溃的应用(#/7) [?](#/7)
 
-Health Manager in DEA v2 (a.k.a. [HM9K](https://docs.cloudfoundry.org/concepts/architecture/#hm9k))
+DEA v2的Health Manager (即[HM9K](https://docs.cloudfoundry.org/concepts/architecture/#hm9k))
 
-Health Check in Diego v3
+Diego v3的Health Check
 
-Note:
-  When an app instance crashes, the Health Manager dubbed HM9K will notice this and restart the app instance
+注:
+  当一个应用实例崩溃时，我们称作“HM9000”的Health Manager将会察觉并重启这个应用实例。
 
 ---
 
-## [My app needs](#/8) more memory
+## [我的应用需要](#/8) 更多内存
 
 ```bash
 $ cf events imperfect-app
@@ -127,9 +127,9 @@ $ cf scale imperfect-app -m 256M
 
 ---
 
-## [My app needs](#/9) more disk space
+## [我的应用需要](#/9) 更多磁盘空间
 
-<span style="color: #FF4D4D;">Do not use the app's disk for persistence</span>
+<span style="color: #FF4D4D;">请勿使用应用磁盘空间做持久化存储</span>
 
 ```bash
 $ cf app imperfect-app
@@ -152,14 +152,14 @@ $ cf scale imperfect-app -k 1G
 
 <img src="images/fill-disk.png" style="background:none; border:none; box-shadow:none;" />
 
-Note:
-  Use a service for persistence, do not store any files in the container that runs the app
+注:
+  使用服务来做持久化存储，不要将文件存储在运行应用的容器中。
 
 ---
 
-## Scale [instances, disk & memory](#/10)
+## 扩容 [实例个数，磁盘及内存](#/10)
 
-Combine multiple options in a single command
+在单条命令中使用多个选项
 
 ```bash
 $ cf help scale
@@ -179,35 +179,35 @@ OPTIONS:
 
 ---
 
-## [The](#/11) Twelve-Factor [App](#/11)
+## 12-要素 [应用](#/11)
 
 <a href="http://12factor.net"><img src="images/12factor.png" style="background:none; border:none; box-shadow:none;" /></a>
 
 ---
 
-# <span style="color: #8FF541;">DELIVERED</span>
+# <span style="color: #8FF541;">特性已传达</span>
 
 ```nohighlight
-As a CF hero
-I want my app to be resilient
-So that random failures won't take it offline
+身为一名CF高手
+我希望我的应用能够自动恢复运行状态
+这样意外的错误就不会使其永远离线了
 ```
 
 ---
 
-## [Any](#/13) questions?
+## [答](#/13) 疑?
 
-> Questions cannot be stupid. Answers can.
+> 提问必须正经严肃，解答可以风趣幽默。
 
 ---
 
-# CF SUPERHERO
+# CF 高手进阶
 
-  * Read the [Twelve-Factor App](http://12factor.net/)
-  * Benchmark app with [Load Impact](https://loadimpact.com/) (crash 1-2 instances)
-  * Read about [Blue-Green deployment in CF](http://garage.mybluemix.net/posts/blue-green-deployment/)
-  * Use [cf-blue-green-deploy](https://github.com/bluemixgaragelondon/cf-blue-green-deploy) cli plugin
+  * 阅读[12-要素应用](http://12factor.net/)
+  * 对应用进行[负荷冲击](https://loadimpact.com/) 测试(1-2个实例崩溃)
+  * 阅读[在CF上实现Blue-Green部署](http://garage.mybluemix.net/posts/blue-green-deployment/)
+  * 使用[cf-blue-green-deploy](https://github.com/bluemixgaragelondon/cf-blue-green-deploy) cli插件
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
