@@ -1,42 +1,42 @@
-## Cloud Foundry <br />From Zero To Hero
-### [07 Where does my app store state?](#/0)
+## Cloud Foundry <br />从入门到精通
+### [07 我的应用该将状态保存于何处?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
 
 ---
 
-# [Feature](#/1)
+# [特性](#/1)
 
 ```nohighlight
-As a CF hero
-I want a new version of my app to show the same data
-So that I can iterate on feedback from my users
+身为一名CF高手
+我需要一个新版应用来呈现相同的数据
+这样我便可以对用户反馈进行迭代了
 ```
 
 ---
 
-## [Where does my app store](#/2) state[?](#/2)
+## 应用状态[该保存于何处?](#/2)
 
-In a service deployed alongside Cloud Foundry
+保存在独立于Cloud Foundry之外部署的服务中。
 
-Registered with CF through a [Service Broker](https://docs.cloudfoundry.org/services/overview.html)
-
----
-
-## [What is a](#/3) Service Broker[?](#/3)
-
-A service for provisioning resources of a specific type
-
-An API advertising a catalog of service offerings and plans
-
-Note:
-  Service Broker API is registered and used by the Cloud Controller
+通过[Service Broker](https://docs.cloudfoundry.org/services/overview.html)向CF注册。
 
 ---
 
-## [How do I see all available](#/4) <br />service offerings[?](#/4)
+## [什么是](#/3) Service Broker[?](#/3)
+
+一个用于提供某种特定类型资源的服务。
+
+一组用于公告服务类型及相应套餐计划目录的API接口。
+
+注:
+  Service Broker API由Cloud Controller注册及调用。
+
+---
+
+## [如何查看所有可用的](#/4) <br />服务类型[?](#/4)
 
 ```bash
 $ cf marketplace
@@ -62,7 +62,7 @@ sendgrid         free, bronze*,  ..  Email Delivery. Simplified.
 
 ---
 
-## [I want a](#/5) Redis service instance
+## [创建一个](#/5) Redis服务实例
 
 ```bash
 $ cf create-service rediscloud 30mb redis
@@ -77,10 +77,10 @@ redis   rediscloud   30mb                create succeeded
 
 ---
 
-## [I want my app to](#/6) store state <br />in this Redis service instance
+## [我想让我的应用](#/6) 将状态保存至 <br />这个Redis服务实例中
 
 ```bash
-# From the training home directory:
+# 切换至training主目录:
 $ cd 07-shared-state/stateful-app
 $ cf push --no-start
 ```
@@ -98,14 +98,14 @@ $ cf start stateful-app
 
 <img src="images/index.png" style="background:none; border:none; box-shadow:none;" />
 
-Note:
-  Service can also be bound from manifest.yml (& has been!) These services must be created first.
+注:
+  您也可以在manifest.yml文件中绑定服务。前提是所绑定的服务必须已经预先创建。
 
-  Demo app, see redis connectivity by refreshing page & incrementing view count
+  刷新示例应用的页面，提高访问数，查看redis的连通性。
 
 ---
 
-## [Are](#/7) all app instances <br />using the same Redis[?](#/7)
+## [是否](#/7) 应用的所有实例 <br />均使用同一个Redis[?](#/7)
 
 ```bash
 $ cf scale stateful-app -i 2
@@ -115,7 +115,7 @@ $ cf scale stateful-app -i 2
 
 ---
 
-## [How are](#/8) service details exposed to apps[?](#/8)
+## 服务详情如何暴露给应用[?](#/8)
 
 ```bash
 $ cf env stateful-app
@@ -145,7 +145,7 @@ pub-redis-15708.us-east-1-4.6.ec2.redislabs.com:15708> exit
 
 ---
 
-## [Let's](#/9) iterate on user feedback
+## [一起来](#/9)对用户反馈进行迭代
 
 ```bash
 $ cf set-env stateful-app SHOW_APP_SUPPORTERS true
@@ -156,18 +156,18 @@ $ cf restart stateful-app
 
 ---
 
-## App gets deleted [by mistake](#/10)
+## 应用被[误](#/10)删除了
 
-What actually happened: the CEO clicked some links.
+事实上是: CEO胡乱点击了某些链接。
 
 ```bash
 $ cf delete -f -r stateful-app
 ```
 
-We restore the app, much to our users' delight.
+令人欣慰的是，我们恢复了应用。
 
 ```
-# From the training home directory:
+# 切换至training主目录:
 $ cd 07-shared-state/stateful-app
 $ cf push --no-start
 $ cf set-env stateful-app SHOW_APP_SUPPORTERS true
@@ -176,34 +176,34 @@ $ cf start stateful-app
 
 <img src="images/new-app-supporters.png" style="background:none; border:none; box-shadow:none;" />
 
-Note:
-  The URL is different because we have pushed a new app
+注:
+  URL不同是因为我们部署了一个新应用。
 
 ---
 
-# <span style="color: #8FF541;">DELIVERED</span>
+# <span style="color: #8FF541;">特性已传达</span>
 
 ```
-As a CF hero
-I want a new version of my app to show the same data
-So that I can iterate on feedback from my users
+身为一名CF高手
+我需要一个新版应用来呈现相同的数据
+这样我便可以对用户反馈进行迭代了
 ```
 
 ---
 
-## [Any](#/12) questions?
+## [答](#/12) 疑?
 
-> Questions cannot be stupid. Answers can.
+> 提问必须正经严肃，解答可以风趣幽默。
 
 ---
 
-# CF SUPERHERO
+# CF 高手进阶
 
-  * Use [SendGrid](https://sendgrid.com/) to send e-mails
-  * Use [IronWorker](https://www.iron.io/worker/) for async tasks
-  * Learn about [security groups](https://docs.cloudfoundry.org/adminguide/app-sec-groups.html)
-  * Use a [manually created](https://docs.pivotal.io/pivotalcf/devguide/services/user-provided.html) IBM [Cloudant instance](https://cloudant.com/)
+  * 使用[SendGrid](https://sendgrid.com/)发送e-mails
+  * 使用[IronWorker](https://www.iron.io/worker/)执行异步任务
+  * 学习[security groups](https://docs.cloudfoundry.org/adminguide/app-sec-groups.html)
+  * 使用[手动创建](https://docs.pivotal.io/pivotalcf/devguide/services/user-provided.html) 的IBM [Cloudant instance](https://cloudant.com/)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
