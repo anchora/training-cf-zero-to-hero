@@ -1,5 +1,5 @@
-## Cloud Foundry <br />从入门到精通
-### [03 如何将应用部署到CF之上?](#/0)
+## Cloud Foundry <br />从无名，到英雄
+### [03 我是如何CF push我的应用的?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
    本文版权归CloudCredo所有。 &copy; CloudCredo 2015.保留一切权利。
@@ -7,20 +7,20 @@
 
 ---
 
-# [正片](#/1)
+# [特性](#/1)
 
 ```nohighlight
-作为一名CF高手
-我希望我的应用可以通过URL被访问
+我希望能像CF英雄那样
+使自己的应用可以通过URL被访问
 这样便能让全世界大开眼界了
 ```
 
 ---
 
-## [如何将](#/2)应用部署[至CF?](#/2)
+## [我是如何将](#/2)应用部署[至CF的?](#/2)
 
 ```bash
-# 进入training文件根目录:
+# 切换至training主目录:
 $ cd 03-first-app/web-app
 $ cf push
 
@@ -234,8 +234,8 @@ $ cf logs worker-app --recent
 # <span style="color: #8FF541;">DELIVERED</span>
 
 ```nohighlight
-作为一名CF高手
-我希望我的应用可以通过URL被访问
+我希望能像CF英雄那样
+使自己的应用可以通过URL被访问
 这样便能让全世界大开眼界了
 ```
 
@@ -259,7 +259,7 @@ $ cf delete -f -r web-app
 
 ---
 
-# CF高手进阶
+# CF超级英雄
 
   * 使用[`CF_TRACE=true`](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#trace)调试`cf`命令。
   * 创建你自己的[`manifest.yml`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html)。
