@@ -1,5 +1,5 @@
-## Cloud Foundry <br />从入门到精通
-### [01 初始Cloud Foundry](#/0)
+## Cloud Foundry <br />从无名，到英雄
+### [01 何为Cloud Foundry？](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
   本文版权归CloudCredo所有。 &copy; CloudCredo 2015.保留一切权利。
@@ -7,43 +7,43 @@
 
 ---
 
-## [我们为何相聚于此?](#/1)
+## [我们为何相聚在此?](#/1)
 
-  1. 去发掘Cloud Foundry
-  1. 团队协作，亲身实践
-  1. 成为[玩转Cloud Foundry的高手](#/1)
+  1. 为了发现Cloud Foundry；
+  1. 为了团队协作、寓学于行；
+  1. 为了成为[Cloud Foundry英雄](#/1)
 
 ---
 
-## [你将会学到:](#/2)
+## [您将学到:](#/2)
 
   1. 什么是Cloud Foundry?
-  1. 如何与CF交互?
-  1. 怎样将应用部署到CF之上?
+  1. 我是如何与CF交互的?
+  1. 我是怎样把应用部署到CF之上的?
   1. 什么是buildpacks?
   ---
 
   午餐&午休
 
   ---
-  1. CF如何使我的应用快速恢复运行状态?
-  1. 如何调试CF应用?
-  1. CF应用间的共享状态是如何管理的?
-  1. 如何使用自定义域名?
+  1. CF是如何使我的应用恢复运行状态的?
+  1. 我是如何调试CF应用的?
+  1. CF应用的共享状态是如何管理的?
+  1. 我是如何使用自定义域名（custom domain）和路由（routes）的?
 
 ---
 
-## [好学者有疑](#/3) <br /> 但问无妨
+## [如果您真心想学，](#/3) <br /> 尽管向我提问吧！
 
-> 问题必须正经严肃，但回答可以幽默诙谐。
-
----
-
-## [每个](#/4)主题 [<br />各有](#/4)千秋
+> 问题必须正经严肃，但解答可以风趣幽默。
 
 ---
 
-## [为什么本文需要](#/5) 一整个团队的人 [来讲授？](#/5)
+## [我们将在之后的每个](#/4)专题[<br />中向您传递一个](#/4)特性
+
+---
+
+## [为何本文需要](#/5) 一整个团队的人 [来讲授？](#/5)
 
 ---
 
@@ -61,58 +61,58 @@ http://slides.cf-hero.cloudcredo.io
 
 ---
 
-## [想要](#/8)挑战自我吗？
+## [如果您想要尝试一些](#/8)额外的挑战，
 
-### [那就试着成为一名](#/8) CF 大牛吧！
+### [那就试着成为一名](#/8)CF超级英雄吧！
 
 ---
 
-## [什么是](#/9) Cloud Foundry[?](#/9)
+## [什么是](#/9)Cloud Foundry[?](#/9)
 
-  * 一个开放的 _Platform as a Service_ (_PaaS_)
+  * 一个开放的_Platform as a Service_(_PaaS_)
   * 能够快速便捷地构建、测试、部署、伸缩应用
   * 支持众多语言及框架
 
-> 了解更多 [docs.cloudfoundry.org](https://docs.cloudfoundry.org/concepts/overview.html)
+> [了解更多](https://docs.cloudfoundry.org/concepts/overview.html)
 
 注:
   源码由GitHub托管，使用Apache开源许可。
 
-  开发者使用cf命令行工具与CF实例交互。cf命令行工具提供Windows，Mac及Linux的预构建版本。
+  开发者使用cf cli工具与CF部署环境进行交互。cf cli提供Windows，Mac及Linux的预构建版本。
 
-  CF通过buildpacks支持各种语言及框架，后续课程会作详细介绍。
+  CF可通过buildpacks提供各种语言和框架的支持，后续课程会作详细介绍。
 
 ---
 
-## [什么是](#/10) Platform as a Service[?](#/10)
+## [什么是](#/10)Platform as a Service[?](#/10)
 
-  * <span style="color: #8FF541;">云计算平台</span>按特征可划分为  **IaaS**，**PaaS**，以及 **SaaS**
-  * 应用是 **PaaS** 的计价单位
-  * Heroku开辟了**PaaS**的先河
+  * <span style="color: #8FF541;">云计算平台</span>按特征可划分为  **IaaS**，**PaaS**，及 **SaaS**；
+  * 应用是 **PaaS** 的计费单位；
+  * Heroku开创了**PaaS**的先河。
 
 注:
   IaaS - 服务器， SaaS - 用户。
 
-  Heroku基于其风靡一时的所谓“12要素”经验开创了多种模式，“buildpack”也深受影响。
+  Heroku基于其风靡一时的所谓“12要素”经验开创了多种模式，同时也驱动了“buildpack”模型。
   
 ---
 
-## [为什么要用](#/11) Platform as a Service[?](#/11)
+## [为何使用](#/11) Platform as a Service[?](#/11)
 
-  * 快速传递商业价值
-  * 只需专注于业务
-  * 快速试错、成本低廉，促进学习
+  * 快速传递商业价值；
+  * 只需专注于业务；
+  * 快速试错、成本低廉，促进学习。
 
 注:
-  直接将用户所需呈现其眼前，通过直击痛点不断积累提高。
+  直接将用户所需呈现其眼前，通过直击痛点不断积累。
   
   无需等待IT部门调配服务器资源。
   
-  允许开发者自由选择他认为最适合这项工作的语言及服务。
+  允许开发者自由选择他认为最适于这项工作的语言及服务。
 
 ---
 
-## [Cloud Foundry](#/12) 基金会
+## [Cloud Foundry](#/12)基金会
 
   * EMC
   * HP
@@ -136,24 +136,24 @@ http://slides.cf-hero.cloudcredo.io
 
 ---
 
-## [1.](#/14) 开源 [软件](#/14)
+## [1.](#/14)开源[软件](#/14)
 
   * [github.com/cloudfoundry](https://github.com/cloudfoundry)
-  * **cf-release** 需要有 [BOSH](https://bosh.io/docs) 基础知识
-  * **bosh-lite** 适用于本地CF实例部署
+  * **cf-release**需要有[BOSH](https://bosh.io/docs)基础知识
+  * **bosh-lite**适用于本地CF实例部署
 
 > 千载难逢的学习良机
 
 注:
   良机千载难逢，仍须身体力行，冰冻三尺非一日之寒，入木三分非一日之功。
   BOSH有非常陡峭的学习曲线，上手难度大。
-  通过bosh-lite部署CF要求 10GB 可用内存。
+  通过bosh-lite部署CF要求有10GB可用内存。
   Cloud Credo等公司专业提供CF部署、优化及定制服务。
   如果您对这项工作怀抱兴趣，欢迎联系我们。
 
 ---
 
-## [2.](#/15) 商用 [发行版](#/15)
+## [2.](#/15)商用[发行版](#/15)
 
   * Pivotal Cloud Foundry
   * HP Helion Development Platform
@@ -178,7 +178,7 @@ http://slides.cf-hero.cloudcredo.io
   * HP Helion Development Platform
 
 注:
-  CloudCredo Platform允许你通过一个简单的界面部署一个CF实例或诸如Kubernates等一诸多服务，而您仅需支付标准的基础设施费用，相当于是免费使用。
+  CloudCredo Platform允许你通过一个简单的界面部署一个CF实例或Kubernates等诸多服务，而您仅需支付标准的基础设施费用，相当于是免费使用。
   
   IBM Bluemix包括CF及一些IBM硬件上的服务，倍受银行青睐。 
 
@@ -208,12 +208,12 @@ http://slides.cf-hero.cloudcredo.io
 
 ---
 
-# [正片](#/18)
+# [特性](#/18)
 
 ```nohighlight
-身为一名CF高手
-我得有一个CF账号
-这样我便不用再顾虑基础设施这类问题了
+我希望能像CF英雄那样
+有一个CF账户
+这样我便不用再为基础设施而烦恼了
 ```
 
 ---
@@ -228,31 +228,31 @@ https://run.pivotal.io
 
 ---
 
-# <span style="color: #8FF541;">布道完成</span>
+# <span style="color: #8FF541;">特性已传递</span>
 
 ```nohighlight
-身为一名CF高手
-我得有一个CF账号
-这样我便不用再顾虑基础设施这类问题了
+我希望能像CF英雄那样
+有一个CF账户
+这样我便不用再为基础设施而烦恼了
 ```
 
 ---
 
 ## [答](#/22)疑
 
-> 还是那句话，问题必须正经严肃，但解答可以幽默诙谐
+> 提问必须正经严肃，解答可以风趣幽默。
 
 ---
 
-# CF大牛进阶
+# CF超级英雄
 
-CF公有云服务比较:
+比较CF公有云服务:
   * [Anynines](http://www.anynines.com/pricing)
   * [Swisscom](https://developer.swisscom.com/pricing)
   * [IBM Bluemix](https://console.ng.bluemix.net/pricing/)
   * [Pivotal Web Services](https://run.pivotal.io/pricing)
 
-CF架构比较:
+比较CF架构:
   * [DEA v2](https://docs.cloudfoundry.org/concepts/architecture/)
   * [Diego v3](https://docs.cloudfoundry.org/concepts/diego/diego-architecture.html)
 
