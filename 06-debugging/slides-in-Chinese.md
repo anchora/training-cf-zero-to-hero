@@ -1,26 +1,26 @@
-## Cloud Foundry <br />From Zero To Hero
-### [06 How do I debug my app?](#/0)
+## Cloud Foundry <br />从入门到精通
+### [06 如何调试应用?](#/0)
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
 
 ---
 
-# [Feature](#/1)
+# [特性](#/1)
 
 ```nohighlight
-As a CF hero
-I want to know what my CF app is doing
-So that I can debug it
+身为一名CF高手
+我得知道我的应用究竟在干什么
+这样我便可以进行调试了
 ```
 
 ---
 
-## [Push](#/2) a buggy app
+## [部署](#/2)一个带bug的应用
 
 ```bash
-# From the training home directory:
+# 切换至training主目录:
 $ cd 06-debugging/debug-app
 $ cf push
 
@@ -35,19 +35,19 @@ urls: debug-app-unerring-muddlehead.cfapps.io
 
 ---
 
-## [How do I](#/3) debug my app[?](#/3)
+## [如何](#/3)调试我的应用[?](#/3)
 
 1. App logs
 1. App events
 1. App instrumentation
 1. SSH access*
 
-Note:
-  Diego SSH not fully integrated into PWS
+注:
+  Diego SSH在PWS上并未完全集成
 
 ---
 
-## [1. App](#/4) logs
+## [1. 应用](#/4)logs
 
 ```bash
 $ cf logs debug-app --recent
@@ -64,7 +64,7 @@ $ cf logs debug-app # Tails app logs, CTRL + C to exit
 
 ---
 
-## [Let's](#/5) fix the app
+## [一起来](#/5)修复这个bug
 
 ```bash
 $ cf set-env debug-app FIXED true
@@ -75,7 +75,7 @@ $ cf restart debug-app
 
 ---
 
-## [2. App](#/6) events
+## [2. 应用](#/6)events
 
 ```bash
 $ cf events debug-app
@@ -85,17 +85,17 @@ $ cf events debug-app
 ...
 ```
 
-Note:
-  Notice that the most recent event is at the top
+注:
+  注意最近的事件位于顶部
 
 ---
 
-## [3. App](#/7) instrumentation
+## [3. 应用](#/7)instrumentation
 
 * New Relic
 * AppDynamics
 
-> Included in Java buildpack
+> 包含在Java buildpack中
 
 ---
 
@@ -123,18 +123,18 @@ $ cf push
 $ cf service newrelic
 ```
 
-Note:
-  Create a New Relic service instance
+注:
+  新建一个New Relic服务实例
 
-  Provide app with New Relic license key
+  为应用提供New Relic许可密钥
 
-  Find New Relic Dashboard URL
+  访问New Relic Dashboard页面
 
-  Generate some load
+  访问应用，产生些应用负载以查看效果
 
 ---
 
-## [4.](#/9) SSH [access](#/9)*
+## [4.](#/9) SSH [访问](#/9)*
 
 ```bash
 $ cf logout
@@ -145,33 +145,33 @@ $ cf ssh debug-app
 
 <img src="images/cf-ssh.png" style="background:none; border:none; box-shadow:none;" />
 
-Note:
-  Not publicly announced on PWS yet
+注:
+  PWS上暂未公开宣布
 
 ---
 
-# <span style="color: #8FF541;">DELIVERED</span>
+# <span style="color: #8FF541;">特性已传到</span>
 
 ```nohighlight
-As a CF hero
-I want to know what my CF app is doing
-So that I can debug it
+身为一名CF高手
+我得知道我的应用究竟在干什么
+这样我便可以进行调试了
 ```
 
 ---
 
-## [Any](#/11) questions?
+## [答](#/11) 疑?
 
-> Questions cannot be stupid. Answers can.
+> 提问必须正经严肃，解答可以风趣幽默。
 
 ---
 
-# CF SUPERHERO
+# CF 高手进阶
 
-  * Setup [Skylight](https://www.skylight.io/) for app
-  * Setup [Opbeat](https://opbeat.com/) for app
-  * Learn about [CF Logging and Metrics](http://www.cfsummit.com/sites/cfs2015/files/pages/files/cfsummit15_king.pdf)
-  * Send app logs to [Papertrail](https://papertrailapp.com/)
+  * 为应用设置[Skylight](https://www.skylight.io/)
+  * 为应用设置[Opbeat](https://opbeat.com/)
+  * 学习[CF日志与计量](http://www.cfsummit.com/sites/cfs2015/files/pages/files/cfsummit15_king.pdf)
+  * 将应用日志发送到[Papertrail](https://papertrailapp.com/)
 
 ```bash
 $ cf cups logdrain -l syslog://YOUR-PAPERTRAIL-LOG-DESTINATION
@@ -180,5 +180,5 @@ $ cf bind-service debug-app logdrain
 ```
 
 <p style="font-size: 50%; opacity: 0.2;">
-  This content is copyright of CloudCredo. &copy; CloudCredo 2015. All rights reserved.
+  本文版权归CloudCredo所有。 &copy; CloudCredo 2015. 保留一切权利。
 </p>
